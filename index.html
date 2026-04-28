@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>家伝 (KADEN) | 家電修理とメンテナンスの専門ブログ</title>
+    <meta name="description" content="最新の家電から愛着のある古い家電まで。プロが教える修理のコツ、メンテナンス方法、長持ちさせる秘訣を公開中。">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="logo">
+            <i class="fas fa-tools"></i> 家伝<span>.</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">ホーム</a></li>
+            <li><a href="#categories">カテゴリー</a></li>
+            <li><a href="#latest">最新記事</a></li>
+            <li><a href="#prompts">ライティングツール</a></li>
+            <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="tag">信頼の修理技術</span>
+            <h1>その家電、<br>まだ直せるかもしれません。</h1>
+            <p>日本全国の家電修理のプロが綴る、愛着のある家電を長く使うための知恵袋。</p>
+            <div class="search-bar">
+                <input type="text" placeholder="例：洗濯機 異音 修理方法">
+                <button><i class="fas fa-search"></i> 検索</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="categories">
+        <div class="section-title">
+            <h2>カテゴリーから探す</h2>
+            <p>お使いの家電に合わせた最適な情報をお届けします</p>
+        </div>
+        <div class="category-grid">
+            <div class="category-card">
+                <i class="fas fa-refrigerator"></i>
+                <h3>キッチン家電</h3>
+                <p>冷蔵庫・オーブン・炊飯器</p>
+            </div>
+            <div class="category-card">
+                <i class="fas fa-wind"></i>
+                <h3>空調・季節家電</h3>
+                <p>エアコン・扇風機・加湿器</p>
+            </div>
+            <div class="category-card">
+                <i class="fas fa-tshirt"></i>
+                <h3>ランドリー・掃除</h3>
+                <p>洗濯機・掃除機・乾燥機</p>
+            </div>
+            <div class="category-card">
+                <i class="fas fa-tv"></i>
+                <h3>映像・音響・IT</h3>
+                <p>テレビ・PC・オーディオ</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="admin">
+        <div class="prompt-tool" style="background: var(--surface); color: var(--text); border: 1px solid #e2e8f0;">
+            <h2>新しい修理事例を投稿</h2>
+            <p>こちらから新しい修理レポートをブログに追加できます。</p>
+            <form id="post-form" style="margin-top: 2rem; display: grid; gap: 1rem; text-align: left; max-width: 600px; margin-inline: auto;">
+                <div>
+                    <label>タイトル</label>
+                    <input type="text" id="post-title" placeholder="例：掃除機の吸引力が復活！" style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #ddd;" required>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div>
+                        <label>カテゴリー</label>
+                        <select id="post-category" style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #ddd;">
+                            <option value="キッチン家電">キッチン家電</option>
+                            <option value="空調・季節家電">空調・季節家電</option>
+                            <option value="ランドリー・掃除">ランドリー・掃除</option>
+                            <option value="映像・音響・IT">映像・音響・IT</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>画像URL (任意)</label>
+                        <input type="url" id="post-image" placeholder="https://..." style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #ddd;">
+                    </div>
+                </div>
+                <div>
+                    <label>本文（概要）</label>
+                    <textarea id="post-content" rows="4" style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #ddd;" placeholder="修理のポイントを記入してください" required></textarea>
+                </div>
+                <button type="submit" style="background: var(--primary); color: white; border: none; padding: 1rem; border-radius: 8px; font-weight: 700; cursor: pointer;">記事を公開する</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="latest">
+        <div class="section-title">
+            <h2>修理事例一覧</h2>
+            <p>投稿された最新のレポートです</p>
+        </div>
+        <div class="blog-grid" id="blog-posts">
+            <!-- 記事はJavaScriptで動的に生成されます -->
+        </div>
+    </section>
+
+    <section id="prompts">
+        <div class="prompt-tool">
+            <h2>ブログ執筆サポート</h2>
+            <p>家電修理ブログを書くためのプロンプトをワンクリックで取得できます。</p>
+            
+            <div class="prompt-card">
+                <button class="copy-btn" onclick="copyPrompt(event, 1)">コピー</button>
+                <span class="tag">修理レポート用</span>
+                <p id="prompt-1">「以下の家電修理の内容をブログ記事にしてください。専門用語を避けつつ、原因と結果を明確に。SEOを意識して『[製品名] 修理』で検索されやすい構成でお願いします。 ・製品：[製品名] ・症状：[症状] ・原因：[原因] ・作業：[作業内容]」</p>
+            </div>
+
+            <div class="prompt-card">
+                <button class="copy-btn" onclick="copyPrompt(event, 2)">コピー</button>
+                <span class="tag">メンテナンス解説用</span>
+                <p id="prompt-2">「[家電名]を長持ちさせるためのメンテナンス方法を、一般家庭でもできる範囲で解説するブログ記事を書いてください。注意点と必要な道具、所要時間を具体的に含めてください。」</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo" style="color: white; margin-bottom: 1rem;">
+                    <i class="fas fa-tools"></i> 家伝<span>.</span>
+                </div>
+                <p>家電修理のプロが、<br>あなたの「困った」を解決します。</p>
+            </div>
+            <div class="footer-section">
+                <h4>リンク</h4>
+                <ul style="list-style: none;">
+                    <li><a href="#" style="color: white; text-decoration: none;">修理依頼について</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none;">よくある質問</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none;">プライバシーポリシー</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>SNS</h4>
+                <div style="display: flex; gap: 1rem; font-size: 1.5rem;">
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 KADEN Blog. All Rights Reserved. Built with passion for appliances.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
